@@ -44,6 +44,7 @@ public class Animal
     }
 }
 ```
+
 3. *Herencia:* es un mecanismo que permite reutilizar o extender comportamientos definidos en otras clases compartiendo métodos y datos.
 
  - Superclases y Subclases
@@ -104,6 +105,7 @@ public class Aclaracion
     }
 }
 ```
+
 5. *Eventos:* son acciones que se generan en aplicaciones gráficas ocasionados por los usuarios al oprimir un botón, cambiar el color del texto o dar clic en un texto.
 
 ![evento](https://image1.slideserve.com/3553213/generaci-n-de-eventos1-l.jpg)
@@ -120,9 +122,131 @@ public class Aclaracion
 - PaintEvent : generado cuando un componente se pinta
 - TextEvent : generado cuando un componente del texto se modifica
 - WindowEvent : generado por actividad de la ventana (como cerrar, abrir, minimizar)
+<https://victomanolo.wordpress.com/eventos-en-java/>
+
+6. *Atributos:* Son aquellos que son visibles y que reflejan características como el tamaño, color forma o posición. Los atributos estan asociados a las instancias de la clase, aunque existen otros atributos que no estan asociados a las instancias , sino a las clases.
+
+Los atributos deberian ser públicos para ser utilizados desde fuera de la clase como son el atributi PI.
+
+```java 
+public class Persona{
+                                              
+          public int altura;
+
+                               }
+ // El atributo altura es de instancia porque pertenece a cada persona:
+               
+    Persona mario = new Persona();
+    mario.altura = 184;
+    Persona maria = new Persona();
+    maria.altura = 152;
+                       
+   }
+   
+    public class Persona{
+                              
+               public static int cantidadDeOjos = 2;
+
+                               }
+
+ // l atributo cantidadDeOjos en la clase Persona es de clase, debido a que todas las instancias de la clase persona tendrán igual cantidad de ojos.
 
 
-    
+     Persona mario = new Persona();
+     Persona maria = new Persona ();
+     mario.cantidadDeOjos                 // es igual a 2
+     maria.cantidadDeOjos                // es igual a 2
+     Persona.cantidadDeOjos             // es igual a 2    
+     
+     
+     }      
+  ```
+  
+  7. *Abstración:* es la característica específica de un objeto y que lo diferencia de los demás
+
+ ```java
+ 
+class Estudiante
+{
+  protected nombre;
+  protected email;
+}
+// cada estudiante tiene un mombre y email que lo diferencia de otros estudiantea
+
+```
+
+8. *Encapsulamiento:* hace referencia a limitar el acceso en las variables de la clase. Generamente se ulitilizan lo metodos set y get o modificadores de acceso:
+
+- *privated*, corresponde al nivel cerrado de acceso.
+- *protected* corresponde al nivel protegido.
+- *public* corresponde al nivel abierto.
 
 
 
+ ```java
+public class Animal
+{
+// modificador de acceso de nivel cerrado 
+    private String raza;
+    private String nombre;
+    private int edad;
+
+    public Animal(String nuevoNombre)
+    {
+        nombre = nuevoNombre; //Se le da un nombre al animal
+    }
+
+    //Método get para obtener la edad del animal sin que esta pueda ser modificada por el usuario 
+    public int getEdad()
+    {
+        return edad;
+    }
+
+    //Método set para cambiar la edad del animal
+    public void setEdad(int nuevaEdad)
+    {
+        edad = nuevaEdad;
+    }
+
+    //Método para obtener el nombre del animal
+    public String getNombre()
+    {
+        return nombre;
+    }
+}
+
+ ```
+ 
+ 9. *Polimorfismo: es la capacidad que tienen los objetos de ofrecer distintas respuestas en función de los parámetros.
+
+ ```java
+// superclase 
+class Animal {
+  public void makeSound() {
+    System.out.println("Grr...");
+  }
+}
+// Subclase 
+class Cat extends Animal {    //Hace referencia al objeto gato
+  public void makeSound() {
+    System.out.println("Meow");
+  }                              
+}                          
+class Dog extends Animal {   //Hace referencia al objeto perro
+  public void makeSound() {
+    System.out.println("Woof");
+  }
+}
+//podemos llamar a los métodos makeSound().
+a.makeSound();
+//Outputs "Woof"
+
+b.makeSound();
+//Outputs "Meow"
+
+ ```
+ Por lo general diremos que existen 3 tipos de polimorfismo:
+
+- Sobrecarga: aplica cuando existen funciones con el mismo nombre en clases que son completamente independientes.
+- Paramétrico: Existen funciones con el mismo nombre pero se usan diferentes parámetros (nombre o tipo).
+- Inclusión: Es cuando se puede llamar a un método sin tener que conocer su tipo, así no se toma en cuenta los detalles de las clases especializadas.
