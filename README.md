@@ -149,7 +149,7 @@ public class Persona{
 
                                }
 
- // l atributo cantidadDeOjos en la clase Persona es de clase, debido a que todas las instancias de la clase persona tendrán igual cantidad de ojos.
+ // El atributo cantidadDeOjos en la clase Persona es de clase, debido a que todas las instancias de la clase persona tendrán igual cantidad de ojos.
 
 
      Persona mario = new Persona();
@@ -250,3 +250,11 @@ b.makeSound();
 - Sobrecarga: aplica cuando existen funciones con el mismo nombre en clases que son completamente independientes.
 - Paramétrico: Existen funciones con el mismo nombre pero se usan diferentes parámetros (nombre o tipo).
 - Inclusión: Es cuando se puede llamar a un método sin tener que conocer su tipo, así no se toma en cuenta los detalles de las clases especializadas.
+
+Referencias:
+
+<https://ifgeekthen.nttdata.com/es/polimorfismo-en-java-programaci%C3%B3n-orientada-objetos>
+<https://www.programarya.com/Cursos/Java/Objetos-y-Clases>
+<http://profesores.fi-b.unam.mx/carlos/java/indice.html>
+<http://profesores.fi-b.unam.mx/carlos/java/indice.html>
+
